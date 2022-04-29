@@ -45,7 +45,7 @@ internal class DMakerServiceTest : DescribeSpec({
 
     describe("Create developer") {
         context("When save default developer") {
-            it("should return default developer") {
+            it("Should return default developer") {
                 val developerSlot = slot<Developer>()
 
                 every { developerRepository.findByMemberId(any()) } returns Optional.empty()
@@ -63,7 +63,7 @@ internal class DMakerServiceTest : DescribeSpec({
         }
 
         context("When save developer with duplicated id") {
-            it("should fail with duplicated error") {
+            it("Should fail with duplicated error") {
                 every { developerRepository.findByMemberId(any()) } returns Optional.of(defaultDeveloper)
 
                 shouldThrowExactly<DMakerException> { dMakerService.createDeveloper(defaultCreateRequest) }
