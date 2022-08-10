@@ -2,9 +2,21 @@ spring:
   h2:
     console:
       enabled: true
-  jpa:
-    show-sql: true
+  kafka:
+    bootstrap-servers: pkc-e82om.ap-northeast-2.aws.confluent.cloud:9092
     properties:
-      hibernate:
-        format_sql: true
-        use_sql_comments: true
+      security:
+        protocol: SASL_SSL
+      sasl:
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='AA7XRJJ7SQ5YQXPP' password='R7tqG0gk+r+W5QAQh1jv2fdSa3lMUp8rwP5cXRc/F4NnNL6jus0C5FWu6s6eteKa';
+        mechanism: PLAIN
+    consumer:
+      group-id: mk
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+

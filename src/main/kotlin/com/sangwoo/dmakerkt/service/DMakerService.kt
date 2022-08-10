@@ -11,6 +11,8 @@ import com.sangwoo.dmakerkt.exception.DMakerErrorCode
 import com.sangwoo.dmakerkt.exception.DMakerException
 import com.sangwoo.dmakerkt.repository.DeveloperRepository
 import com.sangwoo.dmakerkt.repository.RetiredDeveloperRepository
+import org.slf4j.LoggerFactory
+import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import java.util.stream.Collectors
@@ -18,8 +20,11 @@ import java.util.stream.Collectors
 @Service
 class DMakerService(
     private val developerRepository: DeveloperRepository,
-    private val retiredDeveloperRepository: RetiredDeveloperRepository
+    private val retiredDeveloperRepository: RetiredDeveloperRepository,
+    private val kafkaTemplate: KafkaTemplate<String, Developer>
 ) {
+
+    private val log = LoggerFactory.getLogger(javaClass)
 
     @Transactional
     fun createDeveloper(request: CreateDeveloper.Request): CreateDeveloper.Response {
@@ -48,6 +53,18 @@ class DMakerService(
         return developerRepository.findDevelopersByStatusCodeEquals(StatusCode.EMPLOYED).stream()
             .map(DeveloperDto::fromEntity)
             .collect(Collectors.toList())
+    }
+
+    /**
+     *  to use Kafka produce
+     */
+    fun sendDeveloper(request: CreateDeveloper.Request) {
+        validateCreateDeveloperRequest(request)
+
+        val developer = createDeveloperFromRequest(request)
+        log.info("mk-service: send contents: $developer")
+        this.kafkaTemplate.send("mk-dmaker", developer)
+
     }
 
     /**

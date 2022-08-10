@@ -30,6 +30,12 @@ dependencies {
 	testImplementation("io.mockk:mockk:1.12.3")
 	testImplementation("com.ninja-squad:springmockk:3.1.1")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+//	kafka 관련 의존성
+	implementation("org.springframework.kafka:spring-kafka")
+	testImplementation("org.springframework.kafka:spring-kafka-test")
+	implementation ("org.apache.kafka:kafka-clients")
+	implementation ("org.apache.kafka:kafka-streams")
 }
 
 tasks.withType<KotlinCompile> {

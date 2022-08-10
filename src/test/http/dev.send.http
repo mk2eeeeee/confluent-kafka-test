@@ -1,0 +1,51 @@
+### Send POST request with json body
+POST http://localhost:8080/sendDeveloper
+Content-Type: application/json
+
+{
+  "developerLevel": "JUNIOR",
+  "developerSkillType": "BACK_END",
+  "experienceYears": 2,
+  "memberId": "minkyoung",
+  "name": "minkyoung",
+  "age": 20
+}
+
+### Send POST request with json body
+POST http://localhost:8080/sendDeveloper
+Content-Type: application/json
+
+{
+  "developerLevel": "JUNIOR",
+  "developerSkillType": "FRONT_END",
+  "experienceYears": 2,
+  "memberId": "yunsun",
+  "name": "yunsun",
+  "age": 20
+}
+
+### Send POST request with json body
+POST http://localhost:8080/sendDeveloper
+Content-Type: application/json
+
+{
+  "developerLevel": "JUNIOR",
+  "developerSkillType": "BACK_END",
+  "experienceYears": 2,
+  "memberId": "hyowon",
+  "name": "hyowon",
+  "age": 20
+}
+
+### Send POST request with json body
+POST http://localhost:8080/sendDeveloper
+Content-Type: application/json
+
+{
+  "developerLevel": "JUNGNIOR",
+  "developerSkillType": "BACK_END",
+  "experienceYears": 6,
+  "memberId": "zzai_sang",
+  "name": "zzai_sang",
+  "age": 20
+}
