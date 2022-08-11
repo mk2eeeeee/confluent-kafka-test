@@ -24,7 +24,7 @@ class KafkaStreamsConfig(
     fun kStreamsConfig(): KafkaStreamsConfiguration {
         return KafkaStreamsConfiguration(
             mapOf(
-                StreamsConfig.APPLICATION_ID_CONFIG to "dmaker",
+                StreamsConfig.APPLICATION_ID_CONFIG to "{your-application-id-name}",
                 StreamsConfig.BOOTSTRAP_SERVERS_CONFIG to bootstrapServer,
                 StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG to Serdes.String().javaClass.name,
                 StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG to Serdes.String().javaClass.name,

@@ -11,7 +11,7 @@ class KafkaConsumerService {
 
     private val log = LoggerFactory.getLogger(javaClass)
 
-    @KafkaListener(topics = ["mk-dmaker"])
+    @KafkaListener(topics = ["{your-topic-name}"])
     fun consumer(message: String) {
         log.info("KafkaConsumerService: $message")
     }

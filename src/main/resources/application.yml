@@ -1,18 +1,15 @@
 spring:
-  h2:
-    console:
-      enabled: true
   kafka:
-    bootstrap-servers: pkc-e82om.ap-northeast-2.aws.confluent.cloud:9092
+    bootstrap-servers: {your-server}
     properties:
       security:
         protocol: SASL_SSL
       sasl:
         jaas:
-          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='AA7XRJJ7SQ5YQXPP' password='R7tqG0gk+r+W5QAQh1jv2fdSa3lMUp8rwP5cXRc/F4NnNL6jus0C5FWu6s6eteKa';
+          config: org.apache.kafka.common.security.plain.PlainLoginModule required username='{your-key}' password='{your-secret}';
         mechanism: PLAIN
     consumer:
-      group-id: mk
+      group-id: {your-group-id-name}
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer

@@ -6,8 +6,8 @@ Content-Type: application/json
   "developerLevel": "JUNIOR",
   "developerSkillType": "BACK_END",
   "experienceYears": 2,
-  "memberId": "minkyoung",
-  "name": "minkyoung",
+  "memberId": "mk",
+  "name": "mk",
   "age": 20
 }
 
@@ -19,8 +19,8 @@ Content-Type: application/json
   "developerLevel": "JUNIOR",
   "developerSkillType": "FRONT_END",
   "experienceYears": 2,
-  "memberId": "yunsun",
-  "name": "yunsun",
+  "memberId": "ys",
+  "name": "ys",
   "age": 20
 }
 
@@ -32,8 +32,8 @@ Content-Type: application/json
   "developerLevel": "JUNIOR",
   "developerSkillType": "BACK_END",
   "experienceYears": 2,
-  "memberId": "hyowon",
-  "name": "hyowon",
+  "memberId": "hw",
+  "name": "hw",
   "age": 20
 }
 
@@ -45,7 +45,7 @@ Content-Type: application/json
   "developerLevel": "JUNGNIOR",
   "developerSkillType": "BACK_END",
   "experienceYears": 6,
-  "memberId": "zzai_sang",
-  "name": "zzai_sang",
+  "memberId": "zs",
+  "name": "zs",
   "age": 20
 }

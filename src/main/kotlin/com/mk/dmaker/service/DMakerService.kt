@@ -56,14 +56,14 @@ class DMakerService(
     }
 
     /**
-     *  to use Kafka produce
+     *  Kafka producer
      */
     fun sendDeveloper(request: CreateDeveloper.Request) {
         validateCreateDeveloperRequest(request)
 
         val developer = createDeveloperFromRequest(request)
-        log.info("mk-service: send contents: $developer")
-        this.kafkaTemplate.send("mk-dmaker", developer)
+        log.info("send contents: $developer")
+        this.kafkaTemplate.send("{your-topic-name}", developer)
 
     }
 

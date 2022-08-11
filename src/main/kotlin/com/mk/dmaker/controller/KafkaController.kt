@@ -19,7 +19,7 @@ class KafkaController(
 
     @PostMapping("/sendDeveloper",consumes = ["application/json"], produces = ["application/json"])
     fun sendDeveloper(@Valid @RequestBody request: CreateDeveloper.Request) {
-        log.info("mk-controller: kafkaProducerServiceDemo.sendDeveloper")
+        log.info("sendDeveloper")
         kafkaProducerService.sendDeveloper(request)
     }
 }
