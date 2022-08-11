@@ -13,8 +13,8 @@ import org.springframework.stereotype.Component
 @Component
 class Processor {
 
-    val consumeTopic = "mk-dmaker"
-    val produceTopic = "mk-dmaker-sender"
+    val consumeTopic = "{your-topic1-name}"
+    val produceTopic = "{your-topic2-name}"
 
     @Autowired
     fun buildPipeline(streamsBuilder: StreamsBuilder) {
